@@ -4,3 +4,11 @@ This project is designed to be a project that is built over time to help student
 
 # React Review
 
+1. Library for react router and axios
+```
+  yarn add react-router-dom axios
+```
+
+2. Fill change index.js
+3. Create pages and change app.js
+4. 

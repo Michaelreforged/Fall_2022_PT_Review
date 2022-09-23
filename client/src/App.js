@@ -1,24 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import {Routes, Route} from "react-router-dom"
+import NavigationBar from "./Components/Shared/NavigationBar";
+import Marathon from "./Pages/Marathons/Marathon";
+import Marathons from "./Pages/Marathons/Marathons";
+import Participants from "./Pages/Participants/Participants";
+import Home from "./Pages/Shared/Home"
+import NoMatch from "./Pages/Shared/NoMatch";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    <NavigationBar/>
+    <Routes>
+      <Route index element={<Home/>}/>
+      <Route path="/marathons" element={<Marathons/>}/>
+      <Route path="/marathons/:id" element={<Marathon/>}/>
+      <Route path="/participants" element={<Participants/>}/>
+      <Route path="/*" element={<NoMatch/>}/>
+    </Routes>
+    </>
   );
 }
 
